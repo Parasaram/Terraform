@@ -4,11 +4,9 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_instance" "base" {
-  ami = "ami-00068cd7555f543d5"
-  instance_type = "t2.micro" 
+resource "aws_instance" "web" {
+  ami = "ami-04b9e92b5572fa0d1"
+  instance_type = "t2.micro"
+  key_name = "tpn"
 }
 
-resource "aws_eip" "base" {
-  instance = "${aws_instance.base.id}"
-}
